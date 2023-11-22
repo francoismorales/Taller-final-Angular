@@ -35,7 +35,7 @@ export class SerieListComponent implements OnInit {
         "https://www.bbc.co.uk/programmes/p065smy4", "https://i.imgur.com/D4y3DrQ.jpg"),
   ];
 
-  
+
 
   onSelected(serie: SerieDetail): void {
     this.selected = true;
@@ -54,4 +54,10 @@ export class SerieListComponent implements OnInit {
     this.getSeries();
   }
 
+  calcularPromedioTemporadas(series: any[]): number {
+    const totalSeasons = series.reduce((acc, serie) => acc + serie.seasons, 0);
+    return series.length > 0 ? totalSeasons / series.length : 0;
+  }
+
 }
+
