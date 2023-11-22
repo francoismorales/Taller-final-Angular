@@ -1,3 +1,30 @@
-<p>
-  serie-list works!
-</p>
+<div *ngIf="selected">
+  <app-serie-detail [serieDetail]="selectedSerie"></app-serie-detail>
+</div>
+
+<hr />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col mb-2">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Channel</th>
+            <th scope="col">Season</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let serie of series">
+            <th scope="row">{{ serie.id }}</th>
+            <td>{{ serie.name }}</td>
+            <td>{{ serie.channel }}</td>
+            <td>{{ serie.seasons }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
