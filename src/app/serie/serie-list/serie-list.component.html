@@ -19,7 +19,7 @@
         <tbody class="table-group-divider">
           <tr *ngFor="let serie of series">
             <th scope="row">{{ serie.id }}</th>
-            <td>{{ serie.name }}</td>
+            <td (click)="onSelected(serie)" >{{ serie.name }} </td>
             <td>{{ serie.channel }}</td>
             <td>{{ serie.seasons }}</td>
           </tr>

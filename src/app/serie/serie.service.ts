@@ -18,4 +18,8 @@ export class SerieService {
     return this.http.get<SerieDetail[]>(this.apiUrl);
   }
 
+  getSerie(id: string): Observable<SerieDetail>{
+    return this.http.get<SerieDetail>(this.apiUrl+"/"+id)
+  }
+
 }
